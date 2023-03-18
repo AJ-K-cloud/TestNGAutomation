@@ -33,12 +33,6 @@ public class TeacherPage {
     @FindBy(xpath =" //div/div[@role='button']")
     public WebElement coursesDropdown;
 
-
-    @FindBy(xpath = "//input[@type='checkbox']")
-
-    public List<WebElement> courseCheckBox;
-
-
     @FindBy(xpath = "//p[.='Add teacher']")
     public WebElement addTeacherHeader;
 
@@ -50,9 +44,12 @@ public class TeacherPage {
 
     @FindBy(xpath = "//p[.='pagination.show']/../p[2]")
     public WebElement totalResult;
+//
+//  @FindBy(xpath = "(//div/ul)[7]/li")
+//    public List<WebElement> option2;
 
-    @FindBy(xpath = "(//div/ul)[7]/li")
-    public List<WebElement> option2;
+    @FindBy(xpath = "//ul[@role='listbox']/li")
+    public List<WebElement>listOfCourses;
 
 
     public int getTeacher(){
@@ -61,6 +58,13 @@ public class TeacherPage {
         int totalNumberInt = Integer.parseInt(totalNumberStr.trim());
         return totalNumberInt;
     }
+    public int listOfTeacherCourses(){
+        String totalResultStr = totalResult.getText();
+        String totalNumberStr = totalResultStr.substring(totalResultStr.indexOf(" ")+1);
+        int totalNumberInt = Integer.parseInt(totalNumberStr.trim());
+        return totalNumberInt;
+    }
+
 
 
 
