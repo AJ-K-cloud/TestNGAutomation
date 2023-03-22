@@ -45,19 +45,19 @@ public class TeacherPage {
     @FindBy(xpath = "//p[.='pagination.show']/../p[2]")
     public WebElement totalResult;
 
-    @FindBy(xpath = "//div/*[.='First name']")
+    @FindBy(xpath = "(//div/input)[3]")
     public WebElement firstName;
 
-    @FindBy(xpath = "//div/*[.='Last name']")
+    @FindBy(xpath = "(//div/input)[4]")
     public WebElement lastName;
 
-    @FindBy(xpath = "//div/*[.='Phone number']")
+    @FindBy(xpath = "(//div/input)[5]")
     public WebElement phone;
 
-    @FindBy(xpath = "//div/*[.='Email']")
+    @FindBy(xpath = "(//div/input)[6]")
     public WebElement email;
 
-    @FindBy(xpath = "//div/*[.='Specialization']")
+    @FindBy(xpath = "(//div/input)[7]")
     public WebElement specialization;
 
 

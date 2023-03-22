@@ -121,7 +121,6 @@ public class TeacherPageTest {
         Flow.wait(2000);
         Faker faker = new Faker();
         teacherPage.teacherOption.get(0).click();
-        teacherPage.teacherOption.get(0);
         teacherPage.teacherOption.get(1).sendKeys(faker.name().lastName());
         teacherPage.teacherOption.get(2).sendKeys("1234567890");
         teacherPage.teacherOption.get(3).sendKeys(faker.internet().emailAddress());
@@ -260,11 +259,10 @@ public class TeacherPageTest {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(teacherPage.teacherWindow).click().perform();
         Flow.wait(1000);
-        String expectedMessage = "Specialization";
-        String actualMessage = teacherPage.specialization.getText();
-        //System.out.println(teacherPage.specialization.getText());
-        Assert.assertEquals(expectedMessage, actualMessage);
+        Assert.assertTrue(teacherPage.specialization.isDisplayed());
+
         Assert.assertFalse(teacherPage.submitButton.isEnabled());
+
     }
 
     @AfterMethod
