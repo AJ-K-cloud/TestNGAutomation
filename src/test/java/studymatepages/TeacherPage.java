@@ -30,40 +30,51 @@ public class TeacherPage {
     @FindBy(xpath = "//div[@id='content']//input")
     public List<WebElement> teacherOption;
 
-    @FindBy(xpath =" //div/div[@role='button']")
+    @FindBy(xpath = " //div/div[@role='button']")
     public WebElement coursesDropdown;
 
     @FindBy(xpath = "//p[.='Add teacher']")
-    public WebElement addTeacherHeader;
+    public WebElement teacherWindow;
 
     @FindBy(xpath = "(//form//button)[1]")
     public WebElement cancelButton;
 
     @FindBy(xpath = "//div/button[@type='submit']")
     public WebElement submitButton;
+    @FindBy(xpath = "(//form//button)[2]")
+    public WebElement addButton;
+
 
     @FindBy(xpath = "//p[.='pagination.show']/../p[2]")
     public WebElement totalResult;
-//
-//  @FindBy(xpath = "(//div/ul)[7]/li")
-//    public List<WebElement> option2;
+
+    @FindBy(xpath = "//div/*[.='First name']")
+    public WebElement firstName;
+
+    @FindBy(xpath = "//div/*[.='Last name']")
+    public WebElement lastName;
+
+    @FindBy(xpath = "//div/*[.='Phone number']")
+    public WebElement phone;
+
+    @FindBy(xpath = "//div/*[.='Email']")
+    public WebElement email;
+
+    @FindBy(xpath = "//div/*[.='Specialization']")
+    public WebElement specialization;
+
 
     @FindBy(xpath = "//ul[@role='listbox']/li")
-    public List<WebElement>listOfCourses;
+    public List<WebElement> listOfCourses;
 
 
-    public int getTeacher(){
+    public int getTeacher() {
         String totalResultStr = totalResult.getText();
-        String totalNumberStr = totalResultStr.substring(totalResultStr.indexOf(" ")+1);
+        String totalNumberStr = totalResultStr.substring(totalResultStr.indexOf(" ") + 1);
         int totalNumberInt = Integer.parseInt(totalNumberStr.trim());
         return totalNumberInt;
     }
-    public int listOfTeacherCourses(){
-        String totalResultStr = totalResult.getText();
-        String totalNumberStr = totalResultStr.substring(totalResultStr.indexOf(" ")+1);
-        int totalNumberInt = Integer.parseInt(totalNumberStr.trim());
-        return totalNumberInt;
-    }
+
 
 
 
