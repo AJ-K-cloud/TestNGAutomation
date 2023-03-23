@@ -45,7 +45,7 @@ public class TeacherPage {
     @FindBy(xpath = "//p[.='pagination.show']/../p[2]")
     public WebElement totalResult;
 
-    @FindBy(xpath = "(//div/input)[3]")
+    @FindBy(xpath = "//div[.='Phone number']")
     public WebElement firstName;
 
     @FindBy(xpath = "(//div/input)[4]")

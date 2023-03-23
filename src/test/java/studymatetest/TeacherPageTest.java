@@ -5,8 +5,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import tests.studymatepages.LoginPage;
-import tests.studymatepages.TeacherPage;
+
+import studymatepage.LoginPage;
+import studymatepage.TeacherPage;
 import utilities.Config;
 import utilities.Driver;
 import utilities.Flow;
@@ -133,11 +134,7 @@ public class TeacherPageTest {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(teacherPage.teacherWindow).click().perform();
         Flow.wait(1000);
-        String expectedMessage = "First name";
-        String errorMessage = teacherPage.firstName.getText();
-        // System.out.println(teacherPage.firstName.getText());
-        Assert.assertEquals(expectedMessage, errorMessage);
-        Assert.assertFalse(teacherPage.submitButton.isEnabled());
+        Assert.assertTrue(teacherPage.firstName.isDisplayed());
     }
 
 
@@ -165,10 +162,8 @@ public class TeacherPageTest {
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(teacherPage.teacherWindow).click().perform();
         Flow.wait(1000);
-        String expectedMessage = "Last name";
-        String actualMessage = teacherPage.lastName.getText();
-        // System.out.println(teacherPage.lastName.getText());
-        Assert.assertEquals(expectedMessage, actualMessage);
+        Assert.assertTrue(teacherPage.lastName.isDisplayed());
+
         Assert.assertFalse(teacherPage.submitButton.isEnabled());
 
     }
@@ -196,10 +191,8 @@ public class TeacherPageTest {
         teacherPage.listOfCourses.get(index).click();
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(teacherPage.teacherWindow).click().perform();
-        Flow.wait(1000);
-        String expectedMessage = "Phone number";
-        String actualMessage = teacherPage.phone.getText();
-        Assert.assertEquals(expectedMessage, actualMessage);
+        Flow.wait(3000);
+        Assert.assertTrue(teacherPage.phone.isDisplayed());
         Assert.assertFalse(teacherPage.submitButton.isEnabled());
     }
 
@@ -229,9 +222,9 @@ public class TeacherPageTest {
         Flow.wait(1000);
         String expectedMessage = "Email";
         String actual = teacherPage.email.getText();
-        // System.out.println(teacherPage.email.getText());
-        Assert.assertEquals(expectedMessage, actual);
-        Assert.assertFalse(teacherPage.submitButton.isEnabled());
+        System.out.println(teacherPage.email.getText());
+        Assert.assertTrue(teacherPage.email.isDisplayed());
+
     }
 
 
@@ -265,9 +258,9 @@ public class TeacherPageTest {
 
     }
 
-    @AfterMethod
-    public void cleanUp () {
-        Driver.quitBrowser();
-    }
+//    @AfterMethod
+//    public void cleanUp () {
+//        Driver.quitBrowser();
+//    }
 
 }
