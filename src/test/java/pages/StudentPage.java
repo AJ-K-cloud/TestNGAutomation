@@ -22,5 +22,49 @@ public class StudentPage {
     @FindBy(xpath = "//button[.='Delete']")
     public WebElement deleteConfirmation;
 
+
+    @FindBy(name="email")
+    public WebElement emailBtn;
+
+
+    @FindBy(name = "password")
+    public WebElement passwordBtn;
+
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement LoginBtn;
+
+
+    @FindBy(xpath = "//a[@href='/admin/students']")
+    public WebElement studentsBtn;
+
+    @FindBy(xpath = "(//button)[6]")
+    public WebElement threeDotBtn;
+
+    @FindBy(xpath = "(//ul[@role='menu'])[2]/li[2]")
+    public WebElement blockDropDown;
+
+    @FindBy(xpath ="//button[.='Block']")
+    public WebElement blockPopup;
+
+    @FindBy(xpath = "//p[.='Student successfully blocked']")
+    public WebElement blockedPopupMessage;
+
+    @FindBy(xpath = "//p[.='Administrator']")
+    public  WebElement administratorBtn;
+
+
+
+    @FindBy(xpath = "//li[text()='Log out']")
+    // @FindBy(xpath = "(//ul[@role='menu'])[7]/li")
+    public WebElement logOutBtn;
+
+
+    @FindBy(xpath = "//button[.='Log out']")
+    public WebElement logOutExitBtn;
+
+        //   @FindBy(xpath = "p[.='Account is blocked']")
+//    public WebElement accountBlockedMessage;
+
+
 }
 
